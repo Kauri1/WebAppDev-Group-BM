@@ -5,7 +5,7 @@
 
 body {
     line-height: 1.5;
-    margin: 0;
+    margin: 5px;
 }
 
 ul {
@@ -21,6 +21,7 @@ a {
 
 .logo {
     margin: 0;
+    top: 0;
     font-size: 1em;
 }
 
@@ -29,10 +30,10 @@ a {
     padding-bottom: .5em;
     border: 1px solid #f9b856;
     background-color: #f5d29d;
-    box-shadow: 2px 2px 2px 2px #f29b19;
+    box-shadow: 0px 0px 5px 0px #f29b19;
     border-radius: 5px;
-    position: fixed;
-    top: 0;
+    position: relative;
+    top: 5;
     width: 100%;
 }
 
