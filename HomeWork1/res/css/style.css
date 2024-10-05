@@ -133,3 +133,18 @@ a {
     border: solid 1px #aab782;
     border-radius: 5px;
 }
+
+#post1, #post2 {
+    display: flex;
+    padding: 5px;
+    height: 100%;
+    flex-direction: column;
+}
+
+#userdate, #likebutton {
+    flex-grow: 1;
+}
+
+#image, #text {
+    flex-grow: 4;
+}
