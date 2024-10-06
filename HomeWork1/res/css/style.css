@@ -136,6 +136,7 @@ a {
 }
 
 .login-box {
+    text-align: center;
     margin: auto;
     background-color: rgb(209, 209, 209);
     border-radius: 10px;
