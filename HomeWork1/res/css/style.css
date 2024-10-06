@@ -159,3 +159,65 @@ a {
 #image, #text {
     flex-grow: 4;
 }
+
+.post-box {
+    font-size: large;
+    margin: auto;
+    background-color: rgb(209, 209, 209);
+    border-radius: 10px;
+    max-width: 400px;
+    padding: 20px 40px;
+    min-width: none;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.field {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.attach-file {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color: gray;
+    border: 2px solid black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 20px; 
+    transition: background-color 0.3s;
+}
+
+label, .file-text {
+    padding: 0px 20px;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+textarea {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+}
+.submit-btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 20px; 
+    transition: background-color 0.3s;
+}
