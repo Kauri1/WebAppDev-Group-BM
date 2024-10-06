@@ -159,3 +159,19 @@ a {
 #image, #text {
     flex-grow: 4;
 }
+
+.login-button {
+    margin: auto;
+    width: fit-content;
+    background-color: #4281ab;
+    border-radius: 4px;
+    padding: 2px 7px;
+}
+
+.login-button:hover {
+    background-color: #2e5a78;
+}
+
+.login-button a {
+    color: white;
+}
