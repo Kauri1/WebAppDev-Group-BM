@@ -17,25 +17,30 @@
         <a class="logo" href="#"><img src="res/images/usericon.png" width="60" height="60" alt="User icon"></a>
 
     </header>
-
-    <div class="post-box">
-        <div class="field">
-            <label for="post-content">Post body</label>
-            <textarea id="post-content" placeholder="textarea" rows="4"></textarea>
-        </div>
-
-        <div class="field">
-            <span class="file-text">Select file</span>
-            <div class="attach-file">
-                <label for="file-upload" class="file-btn">Choose file</label>
-                <input type="file" id="file-upload" hidden>
+    <form action="index.html" class="custom-form">
+        <div class="post-box">
+            <div class="field">
+                <label for="post-content">Post body</label>
+                <textarea id="post-content" placeholder="textarea" rows="4"></textarea>
             </div>
-        </div>
+            <div class="field">
+                
+                <span class="file-text">Select file</span>
+                <div class="attach-file">
+                    <label for="file-upload" class="file-btn">Choose file</label>
+                    <input type="file" id="file-upload" hidden>
+                </div>
+                
+            </div>
 
-        <div class="actions">
-            <a href="index.html" class="submit-btn">Create post</a>
+            <input type="submit">
+            <!--
+            <div class="actions">
+                <a href="index.html" class="submit-btn">Create post</a>
+            </div>
+            -->
         </div>
-    </div>
+    </form>
 
 </body>
 </html>
