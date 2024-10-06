@@ -136,6 +136,9 @@ a {
 }
 
 .login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin: auto;
     background-color: rgb(209, 209, 209);
@@ -220,21 +223,4 @@ textarea {
     cursor: pointer; 
     margin-top: 20px; 
     transition: background-color 0.3s;
-}
-
-
-.login-button {
-    margin: auto;
-    width: fit-content;
-    background-color: #4281ab;
-    border-radius: 4px;
-    padding: 2px 7px;
-}
-
-.login-button:hover {
-    background-color: #2e5a78;
-}
-
-.login-button a {
-    color: white;
 }
