@@ -145,12 +145,22 @@ a {
     height: fit-content;
 }
 
+/*
 #post1, #post2 {
     display: flex;
     padding: 5px;
     height: 100%;
     flex-direction: column;
 }
+*/
+
+.post {
+    display: flex;
+    padding: 5px;
+    height: 100%;
+    flex-direction: column;
+}
+
 
 #userdate, #likebutton {
     flex-grow: 1;
@@ -237,4 +247,9 @@ textarea {
 
 .login-button a {
     color: white;
+}
+
+::selection{
+    color: #ff0000;
+    background: #333;
 }
