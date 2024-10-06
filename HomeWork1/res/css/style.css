@@ -58,7 +58,7 @@ a {
 
 }
 
-.nav a:hover {
+.nav li > a:hover {
     background-color: #cda261;
     color: #a86e16;
     border-radius: 5px;
