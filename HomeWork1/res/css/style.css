@@ -1,6 +1,7 @@
 * {
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -366,4 +367,17 @@ textarea {
     padding: 20px;
     text-align: center; /* Centered text */
     border-top: 1px solid #f9b856; /* Top border to separate from content */
+}
+
+
+/** dropdown menu **/
+
+.logo {
+   position: relative; /* Needed for dropdown positioning */
+}
+
+.profile-photo {
+    width: 60px; /* Set the size of the profile photo */
+    height: 60px;
+    cursor: pointer; /* Show pointer on hover */
 }
