@@ -1,0 +1,59 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "username": "ladiesman217",
+        "date": "Oct 1, 2024",
+        "profileImage": "res/images/profile1.png",
+        "postImage": "res/images/post1.jpg",
+        "text": "This is a very nice fountain",
+        "likes": 0
+      },
+      {
+        "id": 2,
+        "username": "sonicHedgehog01",
+        "date": "Oct 2, 2024",
+        "profileImage": "res/images/profile2.png",
+        "postImage": "res/images/post2.jpg",
+        "text": "Don't come here food is not good",
+        "likes": 0
+      },
+      {
+        "id": 3,
+        "username": "AnonymousUser",
+        "date": "Oct 3, 2024",
+        "profileImage": "res/images/profile2.png",
+        "postImage": null,
+        "text": "I can't find my glasses :.( One like = one prayer",
+        "likes": 0
+      },
+      {
+        "id": 4,
+        "username": "GirlPower999",
+        "date": "Oct 3, 2024",
+        "profileImage": "res/images/profile3.png",
+        "postImage": "res/images/post3.jpg",
+        "text": "Very nice building, I wonder what's inside.",
+        "likes": 0
+      },
+      {
+        "id": 5,
+        "username": "p0landNumber1",
+        "date": "Oct 4, 2024",
+        "profileImage": "res/images/profile4.png",
+        "postImage": "res/images/post4.jpg",
+        "text": "This building looks real expensive.",
+        "likes": 0
+      },
+      {
+        "id": 6,
+        "username": "2cool4skool",
+        "date": "Oct 5, 2024",
+        "profileImage": "res/images/profile5.png",
+        "postImage": "res/images/post5.jpg",
+        "text": "Rate my base",
+        "likes": 0
+      }
+    ]
+  }
+  
