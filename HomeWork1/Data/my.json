@@ -53,6 +53,42 @@
         "postImage": "res/images/post5.jpg",
         "text": "Rate my base",
         "likes": 0
+      },
+      {
+        "id": 7,
+        "username": "travelJunkie123",
+        "date": "Oct 6, 2024",
+        "profileImage": "res/images/profile1.png",
+        "postImage": "res/images/post6.jpg",
+        "text": "Found a hidden beach today! So peaceful.",
+        "likes": 0
+      },
+      {
+        "id": 8,
+        "username": "chefMasterX",
+        "date": "Oct 7, 2024",
+        "profileImage": "res/images/profile1.png",
+        "postImage": "res/images/post7.jpg",
+        "text": "My latest creation: Truffle pasta!",
+        "likes": 0
+      },
+      {
+        "id": 9,
+        "username": "nature4life",
+        "date": "Oct 8, 2024",
+        "profileImage": "res/images/profile1.png",
+        "postImage": "res/images/post8.jpg",
+        "text": "Nothing beats a good sunrise hike.",
+        "likes": 0
+      },
+      {
+        "id": 10,
+        "username": "gamerZ_01",
+        "date": "Oct 9, 2024",
+        "profileImage": "res/images/profile1.png",
+        "postImage": null,
+        "text": "New high score! Nobody can beat me!",
+        "likes": 0
       }
     ]
   }
