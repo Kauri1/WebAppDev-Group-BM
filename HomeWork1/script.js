@@ -1,4 +1,7 @@
- const jsonURL = 'Data/my.json'; // Example for local JSON file
+const jsonURL = 'Data/my.json'; // Example for local JSON file
+
+//const jsonURL = "https://api.npoint.io/2f3b068c9146625fc960"  // Example of JSON file hosted on a server
+// edit at if not locked https://www.npoint.io/docs/2f3b068c9146625fc960
 
 // Fetch JSON data from the server
 async function fetchPosts() {
