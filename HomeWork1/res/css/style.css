@@ -29,7 +29,7 @@ a {
 
 .logo {
     margin: 5px;
-    font-size: 0;
+    /*font-size: 0;*/
 }
 
 .header {
@@ -387,4 +387,14 @@ textarea {
     width: 60px; /* Set the size of the profile photo */
     height: 60px;
     cursor: pointer; /* Show pointer on hover */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* adjust to the height of the profile photo */
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #aab782;
+    padding: 10px;
 }
