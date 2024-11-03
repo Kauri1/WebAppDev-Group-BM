@@ -396,5 +396,39 @@ textarea {
     right: 0;
     background-color: #f9f9f9;
     border: 1px solid #aab782;
-    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.dropdown-menu .username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.dropdown-menu .email {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 15px 0;
+}
+
+.dropdown-menu .logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .logout:hover {
+    background-color: #0056b3;
 }
