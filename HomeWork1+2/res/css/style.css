@@ -355,17 +355,18 @@ textarea {
 
 .like-button {
     padding: 10px;
-    background-color: #007BFF; 
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
+    width: 75px;
+    align-self: start;
 }
 
 .like-button:hover {
-    background-color: #0056b3; 
+    background-color: #a86e16
 }
 
 .footer {
