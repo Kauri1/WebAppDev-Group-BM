@@ -8,7 +8,22 @@
 
         <div class="container">
             <div class="left"></div>
-            <div class="post-column" id="posts-container"></div>
+                <div id="posts-container" class="post-column">
+                    <div v-for="post in posts" :key="post.id" class="post">
+                        <div class="post-header">
+                            <img :src="post.profileImage" alt="Profile Picture" class="profile-pic">
+                            <div class="user-date">
+                                <div class="user">{{ post.username }}</div>
+                                <div class="date">{{ post.date }}</div>
+                            </div>
+                        </div>
+                        <img v-if="post.postImage" :src="post.postImage" alt="Post Image" class="post-image">
+                        <div class="post-text">{{ post.text }}</div>
+                        <div class="like-button">
+                            <button @click="likePost(post.id)">👍 {{ post.likes }}</button>
+                        </div>
+                    </div>
+                </div>
             <div class="right"></div>
         </div>
     </div>
@@ -16,60 +31,25 @@
 
 
 <script>
-const jsonURL = '/my.json'; // Example for local JSON file
-
-//const jsonURL = "https://api.npoint.io/2f3b068c9146625fc960"  // Example of JSON file hosted on a server
-// edit at if not locked jet https://www.npoint.io/docs/2f3b068c9146625fc960
-
-// Fetch JSON data from the server
-async function fetchPosts() {
-    try {
-        const response = await fetch(jsonURL);
-        const data = await response.json();
-        displayPosts(data.posts); // Assumes JSON structure has a key 'posts' containing an array
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-    }
-}
+import { mapState } from 'vuex'; // Import Vuex helpers
 
 // Function to display posts dynamically in the HTML
-function displayPosts(posts) {
-    const container = document.getElementById('posts-container');
-    container.innerHTML = ''; // Clear container before adding new content
-
-    posts.forEach(post => {
-        // Create the HTML structure for each post
-        const postElement = document.createElement('div');
-        postElement.className = 'post';
-
-        // Construct post HTML
-        postElement.innerHTML = `
-            <div class="post-header">
-                <img src="${post.profileImage}" alt="Profile Picture" class="profile-pic">
-                <div class="user-date">
-                    <div class="user">${post.username}</div>
-                    <div class="date">${post.date}</div>
-                </div>
-            </div>
-            ${post.postImage ? `<img src="${post.postImage}" alt="Post Image" class="post-image">` : ''}
-            <div class="post-text">${post.text}</div>
-            <div class="like-button">👍 ${post.likes}</div>
-        `;
-
-        container.appendChild(postElement);
-    });
-}
-
-// Fetch and display posts on page load
-//fetchPosts();
 
 export default {
     name: 'IndexView',
-    created() {
-        // fetch posts, when the component is created
-        fetchPosts();
-    }
-}
+    computed: {
+        ...mapState(['posts']), // Access posts from Vuex state
+    },
+    methods: {
+        likePost(postId) {
+            this.$store.dispatch('incrementLikes', postId); // Trigger the action to increment likes
+        },
+        testClick() {
+            console.log('Button clicked!');
+        },
+        
+    },
+};
 
 </script>
 

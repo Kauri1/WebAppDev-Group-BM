@@ -9,8 +9,6 @@
             <input type="submit" value="log in"><br>
         </form><br>
         </div>
-
-
     </div>
 </template>
     
