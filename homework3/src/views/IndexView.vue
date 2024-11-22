@@ -1,28 +1,26 @@
 <template>
-    <div>
-        <h1>This is the index page!</h1>
+
+    <div class="index-view">
+    
+        <div>
+            <h1>This is the index page!</h1>
+        </div>
+
+        <div class="container">
+            <div class="left"></div>
+            <div class="post-column" id="posts-container"></div>
+            <div class="right"></div>
+        </div>
+
     </div>
 
-    <div class="container">
-        <div class="left"></div>
-        <div class="post-column" id="posts-container"></div>
-        <div class="right"></div>
-    </div>
-
-    <PageFooter/>
+    
 </template>
 
 
 <script>
 
-import PageFooter from "@/components/Footer.vue";
 
-export default {
-    name: "IndexView",
-    components: {
-        PageFooter
-    },
-}
 
 const jsonURL = '/my.json'; // Example for local JSON file
 

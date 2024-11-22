@@ -1,10 +1,32 @@
 <template>
+  <PageHeader/>
+
+    <!--
   <nav>
     <router-link to="/">Index</router-link>|
     <router-link to="/LoginView">Login</router-link>
+        
   </nav>
+    -->
   <router-view/>
+  <PageFooter/>
 </template>
+
+<script>
+import PageFooter from "@/components/Footer.vue";
+import PageHeader from "@/components/Header.vue";
+
+export default {
+    name: "IndexView",
+    components: {
+        PageFooter,
+        PageHeader
+    },
+}
+
+
+
+</script>
 
 <style>
 #app {
