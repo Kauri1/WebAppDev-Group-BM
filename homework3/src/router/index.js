@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import IndexView from '../views/IndexView.vue'
-import LoginView from '../views/LoginView.vue'
+import IndexView from '@/views/IndexView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 const routes = [{
     path: '/',

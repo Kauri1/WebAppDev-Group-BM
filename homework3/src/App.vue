@@ -1,20 +1,23 @@
 <template>
-  <PageHeader/>
+  <div>
+    <PageHeader/>
 
     <!--
-  <nav>
-    <router-link to="/">Index</router-link>|
-    <router-link to="/LoginView">Login</router-link>
-        
-  </nav>
+    <nav>
+      <router-link to="/">Index</router-link>|
+      <router-link to="/LoginView">Login</router-link>
+    </nav>
     -->
-  <router-view/>
-  <PageFooter/>
+    <main>
+      <router-view/>
+    </main>
+    <PageFooter/>
+  </div>
 </template>
 
 <script>
-import PageFooter from "@/components/Footer.vue";
-import PageHeader from "@/components/Header.vue";
+import PageFooter from "./components/Footer.vue";
+import PageHeader from "./components/Header.vue";
 
 export default {
     name: "IndexView",
@@ -23,8 +26,6 @@ export default {
         PageHeader
     },
 }
-
-
 
 </script>
 
