@@ -11,17 +11,11 @@
             <div class="post-column" id="posts-container"></div>
             <div class="right"></div>
         </div>
-
     </div>
-
-    
 </template>
 
 
 <script>
-
-
-
 const jsonURL = '/my.json'; // Example for local JSON file
 
 //const jsonURL = "https://api.npoint.io/2f3b068c9146625fc960"  // Example of JSON file hosted on a server
