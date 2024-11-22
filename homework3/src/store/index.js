@@ -105,7 +105,6 @@ export default createStore({
   mutations: {
     // Mutation to increment the likes of a post by its ID
     incrementLikes(state, postId) {
-      console.log("Post ID clicked:", postId);
       const post = state.posts.find(p => p.id === postId); // Find the post by its ID
       if (post) {
         post.likes++; // Increment the like count

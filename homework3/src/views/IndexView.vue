@@ -5,7 +5,6 @@
         <div>
             <h1>This is the index page!</h1>
         </div>
-
         <div class="container">
             <div class="left"></div>
                 <div id="posts-container" class="post-column">
@@ -32,8 +31,6 @@
 
 <script>
 import { mapState } from 'vuex'; // Import Vuex helpers
-
-// Function to display posts dynamically in the HTML
 
 export default {
     name: 'IndexView',
