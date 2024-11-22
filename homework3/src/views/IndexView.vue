@@ -61,7 +61,15 @@ function displayPosts(posts) {
 }
 
 // Fetch and display posts on page load
-fetchPosts();
+//fetchPosts();
+
+export default {
+    name: 'IndexView',
+    created() {
+        // fetch posts, when the component is created
+        fetchPosts();
+    }
+}
 
 </script>
 
