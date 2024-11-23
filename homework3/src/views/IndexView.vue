@@ -25,6 +25,9 @@
                 </div>
             <div class="right"></div>
         </div>
+        <div class="reset-container">
+            <button @click="resetLikes" class="resetLikesButton">Reset Likes</button>
+        </div>
     </div>
 </template>
 
@@ -40,6 +43,9 @@ export default {
     methods: {
         likePost(postId) {
             this.$store.dispatch('incrementLikes', postId); // Trigger the action to increment likes
+        },
+        resetLikes() {
+            this.$store.dispatch('resetLikes'); // Trigger the action to reset all likes
         },
         testClick() {
             console.log('Button clicked!');

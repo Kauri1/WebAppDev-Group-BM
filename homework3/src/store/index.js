@@ -109,13 +109,23 @@ export default createStore({
       if (post) {
         post.likes++; // Increment the like count
       }
-    }
+    },
+    // Mutation to reset the likes for all the posts
+    resetLikes(state) {
+      state.posts.forEach((post) => { 
+        post.likes = 0; // Set the likes for each post to 0
+      });
   },
+},
   actions: {
     // Action to call the mutation and increment the likes
     incrementLikes({ commit }, postId) {
       commit('incrementLikes', postId); // Commit the mutation to update the state
-    }
+    },
+    // Action to call the mutation and reset all likes
+    resetLikes({commit}) {
+      commit('resetLikes'); // Commit the mutation to update the states
+    },
   },
   modules: {},
 });
