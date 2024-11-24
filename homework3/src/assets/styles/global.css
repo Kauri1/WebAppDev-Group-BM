@@ -59,22 +59,6 @@ a {
 
 }
 
-.right {
-    display: none;
-    flex: 1;
-    /*text-align: center;*/
-    background-color:#c1cd9d;
-    border: solid 1px #aab782;
-    border-radius: 5px;
-}
-
-.left {
-    display: none;
-    flex: 1; 
-    background-color:#c1cd9d;
-    border: solid 1px #aab782;
-    border-radius: 5px;
-}
 
 .nav li > a:hover {
     background-color: #cda261;
@@ -104,9 +88,6 @@ a {
             flex-direction: row;
             justify-content: space-between;
         }
-        .left, .right {
-            display: block;
-        }
     }
 
     /* smaller than 300px */
@@ -124,29 +105,6 @@ a {
 }
 
 
-.post-column {
-    flex: 4;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-
-
-
-.post-column div {
-    flex-grow: 1;
-    margin: 0 8px;
-    border-radius: 5px;
-    background-color:#cfd2c4;
-}
-
-.post-column div+div {
-    margin-top: 8px;
-}
-
-
-
 .login-box {
     display: flex;
     flex-direction: column;
@@ -160,15 +118,6 @@ a {
     height: fit-content;
     padding: 10px 0px;
 }
-
-/*
-#post1, #post2 {
-    display: flex;
-    padding: 5px;
-    height: 100%;
-    flex-direction: column;
-}
-*/
 
 .custom-form input[type="email"],
 .custom-form input[type="password"] {
@@ -203,16 +152,6 @@ a {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.post {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 
 #userdate, #likebutton {
     flex-grow: 1;
@@ -222,19 +161,7 @@ a {
     flex-grow: 4;
 }
 
-.post-box {
-    font-size: large;
-    margin: auto;
-    background-color: rgb(209, 209, 209);
-    border-radius: 10px;
-    max-width: 400px;
-    padding: 20px 40px;
-    min-width: none;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .field {
     padding: 10px;
     display: flex;
@@ -284,7 +211,7 @@ textarea {
     transition: background-color 0.3s;
 }
 
-
+/*
 .login-button {
     margin: auto;
     width: fit-content;
@@ -300,21 +227,13 @@ textarea {
 .login-button a {
     color: white;
 }
+*/
 
 ::selection{
     color: #ff0000;
     background: #333;
 }
-.post {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border: solid 1px #aab782;
-}
+
 
 .post-header {
     display: flex;
@@ -343,32 +262,6 @@ textarea {
     color: #555;
 }
 
-.post-image {
-    width: 100%;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-.post-text {
-    margin-bottom: 10px;
-}
-
-.like-button {
-    padding: 10px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s;
-    width: 75px;
-    align-self: start;
-}
-
-.like-button:hover {
-    background-color: #a86e16
-}
-
 .footer {
     background-color: #f5d29d; /* Same background as header */
     color: #333; /* Dark text color */
@@ -388,50 +281,6 @@ textarea {
     width: 60px; /* Set the size of the profile photo */
     height: 60px;
     cursor: pointer; /* Show pointer on hover */
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 60px; /* adjust to the height of the profile photo */
-    right: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #aab782;
-    border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    width: 250px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-.dropdown-menu .username {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-}
-
-.dropdown-menu .email {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0 15px 0;
-}
-
-.dropdown-menu .logout {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 14px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-menu .logout:hover {
-    background-color: #0056b3;
 }
 
 .reset-container {
