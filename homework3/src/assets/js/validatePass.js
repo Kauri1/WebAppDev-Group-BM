@@ -18,7 +18,7 @@ export function validatePass (password) {
         errors.push("Password must include at least two lowercase alphabet characters.");
     }
 
-    if (!/[A-Z]/.test(password)) {
+    if (!/[0-9]/.test(password)) {
         errors.push("Password must include at least one numeric value");
     }
 
