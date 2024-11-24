@@ -3,6 +3,9 @@
     <div class="index-view">
         <div class="container">
             <div class="left"></div>
+
+            <PostContainer/>
+            <!--
                 <div id="posts-container" class="post-column">
                     <div v-for="post in posts" :key="post.id" class="post">
                         <div class="post-header">
@@ -19,7 +22,7 @@
                         </div>-->
                         <div class="like-button" @click="likePost(post.id)">👍 {{post.likes}}</div>
                     </div>
-                </div>
+                </div> -->
             <div class="right"></div>
         </div>
         <div class="reset-container">
@@ -31,9 +34,13 @@
 
 <script>
 import { mapState } from 'vuex'; // Import Vuex helpers
+import PostContainer from '@/components/Post.vue';
 
 export default {
     name: 'IndexView',
+    components: {
+        PostContainer,
+    },
     computed: {
         ...mapState(['posts']), // Access posts from Vuex state
     },
