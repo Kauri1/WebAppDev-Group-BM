@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/WebAppDev-Group-BM/" : "/",
+  publicPath: '/WebAppDev-Group-BM/homework3/'
 };
