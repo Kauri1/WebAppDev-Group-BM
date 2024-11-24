@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/WebAppDev-Group-BM/homework3/'
+  publicPath: '/WebAppDev-Group-BM/'
 };
