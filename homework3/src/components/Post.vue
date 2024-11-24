@@ -1,16 +1,5 @@
 <template>
-
-    <div class="index-view">
-    
-        <div>
-            <h1>This is the index page!</h1>
-        </div>
-        <div class="container">
-            <div class="left"></div>
-
-            <PostContainer/>
-            <!--
-                <div id="posts-container" class="post-column">
+    <div id="posts-container" class="post-column">
                     <div v-for="post in posts" :key="post.id" class="post">
                         <div class="post-header">
                             <img :src="post.profileImage" alt="Profile Picture" class="profile-pic">
@@ -25,26 +14,15 @@
                             <button @click="likePost(post.id)">👍 {{ post.likes }}</button>
                         </div>
                     </div>
-                </div> -->
-            <div class="right"></div>
-        </div>
-        <div class="reset-container">
-            <button @click="resetLikes" class="resetLikesButton">Reset Likes</button>
-        </div>
-    </div>
+                </div>
 </template>
 
-
 <script>
-import { mapState } from 'vuex'; // Import Vuex helpers
-import PostContainer from '@/components/Post.vue';
+import { mapState } from 'vuex';
 
 export default {
-    name: 'IndexView',
-    components: {
-        PostContainer,
-    },
-    computed: {
+  name: 'PostComponent',
+  computed: {
         ...mapState(['posts']), // Access posts from Vuex state
     },
     methods: {
@@ -60,11 +38,7 @@ export default {
         
     },
 };
-
 </script>
-
-
-
 
 <style scoped>
 * {
