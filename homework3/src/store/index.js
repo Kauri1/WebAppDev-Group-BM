@@ -3,7 +3,8 @@ import { createStore } from 'vuex';
 export default createStore({
   state() {
     return {
-      posts: [
+      // Store the post data locally in order to persist any made changes.
+      posts: JSON.parse(localStorage.getItem('posts')) || [
         {
           id: 1,
           username: "ladiesman217",
@@ -108,12 +109,14 @@ export default createStore({
       const post = state.posts.find(p => p.id === postId); // Find the post by its ID
       if (post) {
         post.likes++; // Increment the like count
+        localStorage.setItem('posts', JSON.stringify(state.posts)); // Store changed post data
       }
     },
     // Mutation to reset the likes for all the posts
     resetLikes(state) {
       state.posts.forEach((post) => { 
         post.likes = 0; // Set the likes for each post to 0
+        localStorage.setItem('posts', JSON.stringify(state.posts)); // Store changed post data
       });
   },
 },
