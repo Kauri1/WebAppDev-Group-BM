@@ -30,13 +30,6 @@ export default {
         likePost(postId) {
             this.$store.dispatch('incrementLikes', postId); // Trigger the action to increment likes
         },
-        resetLikes() {
-            this.$store.dispatch('resetLikes'); // Trigger the action to reset all likes
-        },
-        testClick() {
-            console.log('Button clicked!');
-        },
-        
     },
 };
 </script>
@@ -44,29 +37,6 @@ export default {
 
 
 <style scoped>
-.right {
-    display: none;
-    flex: 1;
-    /*text-align: center;*/
-    background-color:#c1cd9d;
-    border: solid 1px #aab782;
-    border-radius: 5px;
-}
-
-.left {
-    display: none;
-    flex: 1; 
-    background-color:#c1cd9d;
-    border: solid 1px #aab782;
-    border-radius: 5px;
-}
-
-    /* larger than 500px */
-    @media (min-width: 500px) {
-        .left, .right {
-            display: block;
-        }
-    }
 
 .post-column {
     flex: 4;
@@ -74,9 +44,6 @@ export default {
     flex-direction: column;
     
 }
-
-
-
 
 .post-column div {
     flex-grow: 1;
