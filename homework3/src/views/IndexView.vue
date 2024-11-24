@@ -17,12 +17,12 @@
                         </div>
                         <img v-if="post.postImage" :src="post.postImage" alt="Post Image" class="post-image">
                         <div class="post-text">{{ post.text }}</div>
-                         <!--<div class="like-button">
+                        <div class="like-button">
                             <button @click="likePost(post.id)">👍 {{ post.likes }}</button>
-                        </div>-->
+                        </div>
                         <div class="like-button" @click="likePost(post.id)">👍 {{post.likes}}</div>
                     </div>
-                </div> -->
+                </div>-->
             <div class="right"></div>
         </div>
         <div class="reset-container">
