@@ -1,12 +1,13 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
     user: "postgres",
-    password: "12345", // Enter your password here
+    password: "1368", // Enter your password here
     database: "testWad", //Try to use the same name for your database
     host: "localhost",
-    port: "5432"
+    port: "5433"
 });
 
+/*
 const execute = async(createTblQuery, insertDataQuery) => {
     try {
         await pool.connect();
@@ -18,7 +19,9 @@ const execute = async(createTblQuery, insertDataQuery) => {
         return false;
     }
 };
+*/
 
+/*
 const createTblQuery1 = `
     CREATE TABLE IF NOT EXISTS "posttable" (
 	    "id" SERIAL PRIMARY KEY,         
@@ -34,7 +37,42 @@ const createTblQuery2 = `
         email VARCHAR(200) NOT NULL UNIQUE,
         password VARCHAR(200) NOT NULL 
     );`;
+*/
 
+async function createTables() {
+    const client = await pool.connect();
+    try {
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS users (
+          id SERIAL PRIMARY KEY,
+          email VARCHAR(255) UNIQUE NOT NULL,
+          password VARCHAR(255) NOT NULL
+        );
+      `);
+
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS posts (
+          id SERIAL PRIMARY KEY,
+          title VARCHAR(255) NOT NULL,
+          body TEXT NOT NULL,
+          date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+        );
+      `);
+      
+      console.log("Tables created (if they didn't exist)");
+    } catch (error) {
+      console.error('Error creating tables:', error);
+    } finally {
+      client.release();
+    }
+  }
+  
+  createTables();
+  
+  module.exports = { pool, createTables };
+
+  /*
 // A function to execute the previous query   
 execute(createTblQuery1, createTblQuery2).then(result => {
     if (result) {
@@ -43,3 +81,4 @@ execute(createTblQuery1, createTblQuery2).then(result => {
 });
 
 module.exports = pool;
+*/

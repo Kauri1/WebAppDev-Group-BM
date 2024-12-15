@@ -1,8 +1,8 @@
-// routes/auth.js
+// /auth.js
 const express = require('express');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { pool } = require('../database');
+const { pool } = require('./database');
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
       const hashedPassword = await bcrypt.hash(password, 10);
   
       await pool.query(
-        'INSERT INTO users (email, password_hash) VALUES ($1, $2)',
+        'INSERT INTO users (email, password) VALUES ($1, $2)',
         [email, hashedPassword]
       );
   
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
     }
 
     const user = result.rows[0];
-    const isPasswordMatch = await bcrypt.compare(password, user.password_hash);
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
