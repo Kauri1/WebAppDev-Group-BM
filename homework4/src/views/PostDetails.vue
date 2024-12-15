@@ -33,7 +33,7 @@
         const postId = this.$route.params.id;
   
         try {
-          const response = await axios.get(`http://localhost:5000/api/posts/${postId}`, {
+          const response = await axios.get(`http://localhost:3000/api/posts/${postId}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           this.post = response.data;
@@ -57,7 +57,7 @@
         const postId = this.$route.params.id;
   
         try {
-          const response = await axios.delete(`http://localhost:5000/api/posts/${postId}`, {
+          const response = await axios.delete(`http://localhost:3000/api/posts/${postId}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
   

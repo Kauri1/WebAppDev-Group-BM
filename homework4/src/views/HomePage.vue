@@ -46,7 +46,7 @@ export default {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/posts', {
+        const response = await axios.get('http://localhost:3000/api/posts/', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.posts = response.data;
@@ -72,7 +72,7 @@ export default {
       }
 
       try {
-        await axios.delete('http://localhost:5000/api/posts', {
+        await axios.delete('http://localhost:3000/api/posts/', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.fetchPosts();

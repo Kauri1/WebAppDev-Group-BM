@@ -29,7 +29,7 @@ export default {
 
       try {
         await axios.post(
-          'http://localhost:5000/api/posts',
+          'http://localhost:3000/api/posts',
           {
             title: this.title,
             body: this.body,
