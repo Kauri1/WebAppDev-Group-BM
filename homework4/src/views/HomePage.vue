@@ -72,7 +72,7 @@ export default {
       }
 
       try {
-        await axios.delete('http://localhost:3000/api/posts/', {
+        await axios.delete('http://localhost:3000/api/posts', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.fetchPosts();

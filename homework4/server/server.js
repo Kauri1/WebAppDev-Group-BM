@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const secret = "gdgdhdbcb770785rgdzqws";
-const maxAge = 60 * 60;
+const maxAge = 60 * 60; //60 minutes
 const generateJWT = (id) => {
     return jwt.sign({ id }, secret, { expiresIn: maxAge })
 }
@@ -87,6 +87,16 @@ app.delete('/api/posts/:id', async(req, res) => {
         console.error(err.message);
     }
 });
+
+app.delete('/api/posts', async (req, res) => {
+    try {
+      await pool.query('DELETE FROM posttable');
+      res.status(200).json({ message: 'All posts deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting all posts!:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
 
 
 app.post('/auth/signup', async(req, res) => {
