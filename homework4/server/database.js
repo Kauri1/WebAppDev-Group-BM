@@ -10,8 +10,8 @@ const pool = new Pool({
 const execute = async(createTblQuery, insertDataQuery) => {
     try {
         await pool.connect();
-        await pool.query(createTblQuery);
-        await pool.query(insertDataQuery);
+        await pool.query(createTblQuery1);
+        await pool.query(createTblQuery2);
         return true;
     } catch (error) {
         console.error(error.stack);
@@ -19,35 +19,25 @@ const execute = async(createTblQuery, insertDataQuery) => {
     }
 };
 
-const createTblQuery = ` 
-    CREATE TABLE IF NOT EXISTS "routes" (
-        "id" SERIAL PRIMARY KEY,  
-        "fromcity" VARCHAR(200) NOT NULL,
-        "tocity" VARCHAR(200) NOT NULL,  
-        "cost" integer NOT NULL, 
-        "departuretime" VARCHAR(200) NOT NULL,
-        "departuredate" VARCHAR(200) NOT NULL
-        );`;
+const createTblQuery1 = `
+    CREATE TABLE IF NOT EXISTS "posttable" (
+	    "id" SERIAL PRIMARY KEY,         
+	    "title" VARCHAR(200) NOT NULL,
+	    "body" VARCHAR(200) NOT NULL,
+        "urllink" VARCHAR(200)  
+    );`;
 
-const insertDataQuery = `WITH data (fromcity, tocity, cost, departuretime, departuredate) AS 
-    (
-    VALUES
-    ('Tartu', 'Tallinn', 14, '06:00:00', '2022-03-24'),  
-    ('Tartu', 'Tallinn', 14, '08:00:00', '2022-03-24'),
-    ('Tartu', 'Parnu ', 11, '10:00:00', '2022-03-24'),
-    ('Tartu', 'Narva', 15, '10:30:00', '2022-03-24'),
-    ('Tartu', 'Tallinn', 12, '11:00:00', '2022-03-24'), 
-    ('Tartu', 'Parnu', 12, '12:00:00', '2022-03-24')
-    )
-    INSERT INTO routes(fromcity, tocity, cost, departuretime, departuredate) 
-    SELECT  d.fromcity, d.tocity, d.cost, d.departuretime, d.departuredate
-    FROM data d
-    WHERE NOT EXISTS (SELECT * FROM routes WHERE id = 1);
-`
+const createTblQuery2 = `
+    CREATE TABLE IF NOT EXISTS "users" (
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+        email VARCHAR(200) NOT NULL UNIQUE,
+        password VARCHAR(200) NOT NULL 
+    );`;
 
-execute(createTblQuery, insertDataQuery).then(result => {
+// A function to execute the previous query   
+execute(createTblQuery1, createTblQuery2).then(result => {
     if (result) {
-        console.log('If does not exists, table "routes" is created');
+        console.log('If does not exists, table "users" and  table "posttable" are created');
     }
 });
 
