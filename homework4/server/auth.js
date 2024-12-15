@@ -30,9 +30,12 @@ router.post('/signup', async (req, res) => {
         'INSERT INTO users (email, password) VALUES ($1, $2)',
         [email, hashedPassword]
       );
+
+      const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: '1h' });
   
       console.log('User created successfully:', email);
-      res.status(201).json({ message: 'User created successfully' });
+      res.status(201).json({ message: 'User created successfully', token});
+
   
     } catch (error) {
       console.error('Error during signup:', error); 

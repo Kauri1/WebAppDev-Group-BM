@@ -22,19 +22,20 @@ export default {
   methods: {
     async signup() {
   try {
-    const response = await axios.post('http://localhost:3000/api/signup', {
+    const response = await axios.post('http://localhost:3000/api/auth/signup', {
       email: this.email,
       password: this.password,
-    }, { withCredentials: true });
+    });
 
     if (response.data.token) {
       localStorage.setItem('token', response.data.token);
+      this.$router.push('/');
     }
-
-    this.$router.push('/');
+    
   } catch (error) {
     console.error('Signup failed:', error);
     alert('Error during signup!');
+    throw error;
   }
 }
 }
