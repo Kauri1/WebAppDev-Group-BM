@@ -1,10 +1,12 @@
+const config = require('./config');
+
 const Pool = require('pg').Pool;
 const pool = new Pool({
-    user: "postgres",
-    password: "1368", // Enter your password here
-    database: "testWad", //Try to use the same name for your database
-    host: "localhost",
-    port: "5433"
+    user: config.DB_USER,
+    password: config.DB_PASSWORD, // Enter your password here
+    database: config.DB_NAME, //Try to use the same name for your database
+    host: config.DB_HOST,
+    port: config.DB_PORT
 });
 
 /*
