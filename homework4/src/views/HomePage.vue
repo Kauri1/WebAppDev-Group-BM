@@ -1,7 +1,7 @@
 <template>
   <div class = "view-container">
     <div class = "container">
-    <h2>Your Posts</h2>
+    <h2>All Posts</h2>
     
     <button @click="goToAddPostPage">Add Post</button>
 
@@ -10,6 +10,7 @@
         <li v-for="post in posts" :key="post.id">
           <h3>{{ post.title }}</h3>
           <p>{{ post.body }}</p>
+          <p>{{ formatTime(post.time) }}</p>
           <button @click="goToPostDetails(post.id)">View Post</button>
         </li>
       </ul>
@@ -38,6 +39,14 @@ export default {
     this.fetchPosts();
   },
   methods: {
+    formatTime(timestamp) {
+      const date = new Date(timestamp);
+      const formattedDate = date.toISOString().split('T')[0] +
+        ', ' +
+        date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+        return formattedDate;
+    },
+    
     async fetchPosts() {
       const token = localStorage.getItem('token');
       if (!token) {

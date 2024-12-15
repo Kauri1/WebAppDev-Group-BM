@@ -1,10 +1,10 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
     user: "postgres",
-    password: "1368", // Enter your password here
+    password: "super", // Enter your password here
     database: "testWad", //Try to use the same name for your database
     host: "localhost",
-    port: "5433"
+    port: "5434"
 });
 
 const execute = async(createTblQuery, insertDataQuery) => {
@@ -24,7 +24,8 @@ const createTblQuery1 = `
 	    "id" SERIAL PRIMARY KEY,         
 	    "title" VARCHAR(200) NOT NULL,
 	    "body" VARCHAR(200) NOT NULL,
-        "urllink" VARCHAR(200)  
+        "urllink" VARCHAR(200),
+        "time" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );`;
 
 const createTblQuery2 = `

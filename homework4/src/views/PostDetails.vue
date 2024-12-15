@@ -2,6 +2,7 @@
     <div v-if="post">
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
+      <p>{{ post.time }}</p>
       <button @click="deletePost">Delete Post</button>
       <button @click="goBack">Go Back</button>
     </div>
@@ -29,7 +30,7 @@
           this.$router.push('/login');
           return;
         }
-  
+        
         const postId = this.$route.params.id;
   
         try {
