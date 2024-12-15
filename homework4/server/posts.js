@@ -76,9 +76,10 @@ router.delete('/posts/:id', verifyToken, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 router.delete('/posts', verifyToken, async (req, res) => {
   try {
-    await pool.query('DELETE FROM posts');
+    await pool.query('DELETE FROM posts where user_id = $1', [req.userId]);
     res.status(200).json({ message: 'All posts deleted successfully' });
   } catch (error) {
     console.error('Error deleting all posts:', error);

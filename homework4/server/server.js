@@ -1,13 +1,3 @@
-/*
-const express = require('express');
-const pool = require('./database');
-const cors = require('cors')
-const bcrypt = require('bcrypt');
-const cookieParser = require('cookie-parser');
-const jwt = require('jsonwebtoken');
-*/
-
-
 const express = require('express');
 const cors = require('cors');
 const { router: authRouter } = require('./auth');
