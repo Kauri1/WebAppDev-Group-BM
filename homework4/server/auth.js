@@ -3,6 +3,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { pool } = require('./database');
+const { JWT_SECRET } = require('./config');
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
@@ -60,7 +61,7 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ userId: user.id }, 'your-secret-key', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: '1h' });
 
     res.json({ token });
   } catch (error) {
@@ -77,7 +78,7 @@ const verifyToken = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, 'your-secret-key');
+    const decoded = jwt.verify(token, JWT_SECRET);
     req.userId = decoded.userId;
     next();
   } catch (error) {
