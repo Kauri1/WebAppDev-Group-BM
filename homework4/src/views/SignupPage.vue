@@ -22,7 +22,7 @@ export default {
   methods: {
     async signup() {
   try {
-    const response = await axios.post('http://localhost:3000/auth/signup', {
+    const response = await axios.post('http://localhost:3000/api/signup', {
       email: this.email,
       password: this.password,
     }, { withCredentials: true });
