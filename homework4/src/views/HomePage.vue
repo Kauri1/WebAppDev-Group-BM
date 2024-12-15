@@ -10,7 +10,7 @@
         <li v-for="post in posts" :key="post.id">
           <h3>{{ post.title }}</h3>
           <p>{{ post.body }}</p>
-          <p>{{ formatTime(post.time) }}</p>
+          <p>{{ formatTime(post.date_created) }}</p>
           <button @click="goToPostDetails(post.id)">View Post</button>
         </li>
       </ul>
